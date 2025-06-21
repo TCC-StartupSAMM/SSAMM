@@ -1,276 +1,522 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guia Estratégico de Segurança para Startups</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body class="bg-gray-100 font-sans">
-  <!-- Navbar -->
-  <nav class="bg-blue-900 text-white p-4 sticky top-0 z-50">
-    <div class="container mx-auto flex justify-between items-center">
-      <a href="#" class="text-2xl font-bold">Guia de Segurança para Startups</a>
-      <div class="hidden md:flex space-x-4">
-        <a href="#home" class="hover:text-blue-300">Início</a>
-        <a href="#samm" class="hover:text-blue-300">Modelo SAMM</a>
-        <a href="#vulnerabilities" class="hover:text-blue-300">Vulnerabilidades</a>
-        <a href="#about" class="hover:text-blue-300">Sobre</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guia Estratégico de Segurança para Startups</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body class="bg-gray-100 font-sans">
+    <!-- Navbar -->
+    <nav class="bg-blue-900 text-white p-4 sticky top-0 z-50">
+      <div class="container mx-auto flex justify-between items-center">
+        <a href="#" class="text-2xl font-bold"
+          >Guia de Segurança para Startups</a
+        >
+        <div class="hidden md:flex space-x-4">
+          <a href="#home" class="hover:text-blue-300">Início</a>
+          <a href="#samm" class="hover:text-blue-300">Modelo SSAMM</a>
+          <a href="#vulnerabilities" class="hover:text-blue-300"
+            >Vulnerabilidades</a
+          >
+          <a href="#about" class="hover:text-blue-300">Sobre</a>
+        </div>
+        <button id="menu-btn" class="md:hidden focus:outline-none">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
       </div>
-      <button id="menu-btn" class="md:hidden focus:outline-none">
-        <i class="fas fa-bars text-xl"></i>
-      </button>
-    </div>
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-blue-800 p-4">
-      <a href="#home" class="block py-2 hover:text-blue-300">Início</a>
-      <a href="#samm" class="block py-2 hover:text-blue-300">Modelo SAMM</a>
-      <a href="#vulnerabilities" class="block py-2 hover:text-blue-300">Vulnerabilidades</a>
-      <a href="#about" class="block py-2 hover:text-blue-300">Sobre</a>
-    </div>
-  </nav>
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-blue-800 p-4">
+        <a href="#home" class="block py-2 hover:text-blue-300">Início</a>
+        <a href="#samm" class="block py-2 hover:text-blue-300">Modelo SSAMM</a>
+        <a href="#vulnerabilities" class="block py-2 hover:text-blue-300"
+          >Vulnerabilidades</a
+        >
+        <a href="#about" class="block py-2 hover:text-blue-300">Sobre</a>
+      </div>
+    </nav>
 
-  <!-- Hero Section -->
-  <section id="home" class="bg-blue-900 text-white py-20">
-    <div class="container mx-auto text-center">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">Guia Estratégico de Segurança para Startups</h1>
-      <p class="text-lg mb-6">Um modelo adaptado baseado no OWASP SAMM, OpenSAMM e Microsoft SDL para autoavaliação e gestão de vulnerabilidades com recursos limitados.</p>
-      <a href="#samm" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-6 rounded-lg">Conheça o Modelo</a>
-    </div>
-  </section>
+    <!-- Hero Section -->
+    <section id="home" class="bg-blue-900 text-white py-20">
+      <div class="container mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+          Guia Estratégico de Segurança para Startups
+        </h1>
+        <p class="text-lg mb-6">
+          Um resultado preliminar de um modelo adaptado baseado no OWASP SAMM,
+          OpenSAMM e Microsoft SDL para autoanálise e gestão de vulnerabilidades
+          com recursos limitados e times pequenos.
+        </p>
+        <a
+          href="#samm"
+          class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-6 rounded-lg"
+          >Conheça o Modelo</a
+        >
+      </div>
+    </section>
 
-  <!-- SAMM Model Section -->
-  <section id="samm" class="py-16">
-    <div class="container mx-auto">
-      <h2 class="text-3xl font-bold text-center mb-12">Modelo SAMM Adaptado para Startups</h2>
-      <p class="text-lg text-center mb-8">Este modelo adapta o OWASP SAMM, OpenSAMM e Microsoft SDL para startups, com práticas acessíveis e níveis de maturidade (0 a 3). Cada função de negócio é explicada abaixo, com práticas simplificadas para equipes pequenas e orçamentos limitados. Clique em cada nível para detalhes sobre atividades, benefícios e critérios.</p>
-      
-      <!-- Governance -->
-      <div class="mb-12">
-        <h3 class="text-2xl font-semibold mb-4">Governança</h3>
-        <p class="text-gray-600 mb-6">Governança envolve a criação de políticas, estratégias e treinamentos para integrar a segurança à cultura da startup. Para startups, foi adaptada para focar em processos simples e acessíveis, como políticas básicas e treinamentos gratuitos, garantindo conformidade com mínimo esforço. Esta função ajuda a alinhar segurança com os objetivos de negócio, mesmo com equipes pequenas.</p>
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <button data-modal="gov-level-0" class="bg-white p-6 rounded-lg shadow-md hover:bg-blue-50 cursor-pointer modal-trigger">
-            <h4 class="text-xl font-bold mb-2">Nível 0</h4>
-            <p class="text-gray-600">Nenhuma política de segurança definida.</p>
-          </button>
-          <button data-modal="gov-level-1" class="bg-white p-6 rounded-lg shadow-md hover:bg-blue-50 cursor-pointer modal-trigger">
-            <h4 class="text-xl font-bold mb-2">Nível 1</h4>
-            <p class="text-gray-600">Política básica e conscientização inicial.</p>
-          </button>
-          <button data-modal="gov-level-2" class="bg-white p-6 rounded-lg shadow-md hover:bg-blue-50 cursor-pointer modal-trigger">
-            <h4 class="text-xl font-bold mb-2">Nível 2</h4>
-            <p class="text-gray-600">Políticas formalizadas e treinamento regular.</p>
-          </button>
-          <button data-modal="gov-level-3" class="bg-white p-6 rounded-lg shadow-md hover:bg-blue-50 cursor-pointer modal-trigger">
-            <h4 class="text-xl font-bold mb-2">Nível 3</h4>
-            <p class="text-gray-600">Métricas e melhoria contínua.</p>
-          </button>
+    <!-- SAMM Model Section -->
+    <section id="samm" class="py-16">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12">
+          Modelo SSAMM (Startup Software Assurance Maturity Model)
+        </h2>
+        <p class="text-lg text-center mb-8">
+          Este resultado preliminar adapta o OWASP SAMM, OpenSAMM e Microsoft
+          SDL para startups, com práticas acessíveis e níveis de maturidade (0 a
+          3). Cada função de negócio é explicada abaixo, com práticas
+          simplificadas para equipes pequenas e orçamentos limitados. Clique em
+          cada nível para detalhes sobre atividades, benefícios e critérios.
+        </p>
+
+        <!-- Governance -->
+        <div class="mb-12">
+          <h3 class="text-2xl font-semibold mb-4">Governança</h3>
+          <p class="text-gray-600 mb-6">
+            Governança envolve a criação de políticas, estratégias e
+            treinamentos para integrar a segurança à cultura da startup. Para
+            startups, foi adaptada para focar em processos simples e acessíveis,
+            como políticas básicas e treinamentos gratuitos, garantindo
+            conformidade com mínimo esforço. Esta função ajuda a alinhar
+            segurança com os objetivos de negócio, mesmo com equipes pequenas.
+          </p>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <button
+              data-modal="gov-level-0"
+              class="bg-white p-6 rounded-lg shadow-md hover:bg-blue-50 cursor-pointer modal-trigger"
+            >
+              <h4 class="text-xl font-bold mb-2">Nível 0</h4>
+              <p class="text-gray-600">
+                Nenhuma política de segurança definida.
+              </p>
+            </button>
+            <button
+              data-modal="gov-level-1"
+              class="bg-white p-6 rounded-lg shadow-md hover:bg-blue-50 cursor-pointer modal-trigger"
+            >
+              <h4 class="text-xl font-bold mb-2">Nível 1</h4>
+              <p class="text-gray-600">
+                Política básica e conscientização inicial.
+              </p>
+            </button>
+            <button
+              data-modal="gov-level-2"
+              class="bg-white p-6 rounded-lg shadow-md hover:bg-blue-50 cursor-pointer modal-trigger"
+            >
+              <h4 class="text-xl font-bold mb-2">Nível 2</h4>
+              <p class="text-gray-600">
+                Políticas formalizadas e treinamento regular.
+              </p>
+            </button>
+            <button
+              data-modal="gov-level-3"
+              class="bg-white p-6 rounded-lg shadow-md hover:bg-blue-50 cursor-pointer modal-trigger"
+            >
+              <h4 class="text-xl font-bold mb-2">Nível 3</h4>
+              <p class="text-gray-600">Métricas e melhoria contínua.</p>
+            </button>
+          </div>
+        </div>
+
+        <!-- Design -->
+        <div class="mb-12">
+          <h3 class="text-2xl font-semibold mb-4">Design</h3>
+          <p class="text-gray-600 mb-6">
+            Design foca na construção de software seguro desde a concepção,
+            identificando riscos e planejando controles. Para startups, foi
+            simplificado com ferramentas gratuitas, como OWASP Threat Dragon, e
+            análises de risco básicas, permitindo que equipes pequenas
+            incorporem segurança sem processos complexos.
+          </p>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <button
+              data-modal="design-level-0"
+              class="bg-white p-6 rounded-lg shadow-md hover:bg-blue-50 cursor-pointer modal-trigger"
+            >
+              <h4 class="text-xl font-bold mb-2">Nível 0</h4>
+              <p class="text-gray-600">Nenhuma análise de riscos realizada.</p>
+            </button>
+            <button
+              data-modal="design-level-1"
+              class="bg-white p-6 rounded-lg shadow-md hover:bg-blue-50 cursor-pointer modal-trigger"
+            >
+              <h4 class="text-xl font-bold mb-2">Nível 1</h4>
+              <p class="text-gray-600">Análise de riscos simples no início.</p>
+            </button>
+            <button
+              data-modal="design-level-2"
+              class="bg-white p-6 rounded-lg shadow-md hover:bg-blue-50 cursor-pointer modal-trigger"
+            >
+              <h4 class="text-xl font-bold mb-2">Nível 2</h4>
+              <p class="text-gray-600">Modelagem de ameaças básica.</p>
+            </button>
+            <button
+              data-modal="design-level-3"
+              class="bg-white p-6 rounded-lg shadow-md hover:bg-blue-50 cursor-pointer modal-trigger"
+            >
+              <h4 class="text-xl font-bold mb-2">Nível 3</h4>
+              <p class="text-gray-600">Modelagem de ameaças formalizada.</p>
+            </button>
+          </div>
+        </div>
+
+        <!-- Implementation -->
+        <div class="mb-12">
+          <h3 class="text-2xl font-semibold mb-4">Implementação</h3>
+          <p class="text-gray-600 mb-6">
+            Implementação abrange práticas de codificação segura e gestão de
+            dependências. Para startups, foi adaptada para usar diretrizes
+            gratuitas, como OWASP Secure Coding Practices, e ferramentas de
+            análise de código acessíveis, como SonarQube, reduzindo
+            vulnerabilidades sem demandar grandes investimentos.
+          </p>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <button
+              data-modal="impl-level-0"
+              class="bg-white p-6 rounded-lg shadow-md hover:bg-blue-50 cursor-pointer modal-trigger"
+            >
+              <h4 class="text-xl font-bold mb-2">Nível 0</h4>
+              <p class="text-gray-600">Nenhum padrão de codificação segura.</p>
+            </button>
+            <button
+              data-modal="impl-level-1"
+              class="bg-white p-6 rounded-lg shadow-md hover:bg-blue-50 cursor-pointer modal-trigger"
+            >
+              <h4 class="text-xl font-bold mb-2">Nível 1</h4>
+              <p class="text-gray-600">Diretrizes básicas de codificação.</p>
+            </button>
+            <button
+              data-modal="impl-level-2"
+              class="bg-white p-6 rounded-lg shadow-md hover:bg-blue-50 cursor-pointer modal-trigger"
+            >
+              <h4 class="text-xl font-bold mb-2">Nível 2</h4>
+              <p class="text-gray-600">Análise estática de código.</p>
+            </button>
+            <button
+              data-modal="impl-level-3"
+              class="bg-white p-6 rounded-lg shadow-md hover:bg-blue-50 cursor-pointer modal-trigger"
+            >
+              <h4 class="text-xl font-bold mb-2">Nível 3</h4>
+              <p class="text-gray-600">Revisão de código automatizada.</p>
+            </button>
+          </div>
+        </div>
+
+        <!-- Verification -->
+        <div class="mb-12">
+          <h3 class="text-2xl font-semibold mb-4">Verificação</h3>
+          <p class="text-gray-600 mb-6">
+            Verificação envolve testes para identificar vulnerabilidades no
+            software. Para startups, foi simplificado com testes manuais
+            iniciais e ferramentas gratuitas, como OWASP ZAP, permitindo a
+            detecção de falhas comuns, como injeções, sem a necessidade de
+            especialistas dedicados.
+          </p>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <button
+              data-modal="verif-level-0"
+              class="bg-white p-6 rounded-lg shadow-md hover:bg-blue-50 cursor-pointer modal-trigger"
+            >
+              <h4 class="text-xl font-bold mb-2">Nível 0</h4>
+              <p class="text-gray-600">Nenhum teste de segurança realizado.</p>
+            </button>
+            <button
+              data-modal="verif-level-1"
+              class="bg-white p-6 rounded-lg shadow-md hover:bg-blue-50 cursor-pointer modal-trigger"
+            >
+              <h4 class="text-xl font-bold mb-2">Nível 1</h4>
+              <p class="text-gray-600">Testes manuais básicos.</p>
+            </button>
+            <button
+              data-modal="verif-level-2"
+              class="bg-white p-6 rounded-lg shadow-md hover:bg-blue-50 cursor-pointer modal-trigger"
+            >
+              <h4 class="text-xl font-bold mb-2">Nível 2</h4>
+              <p class="text-gray-600">Testes automatizados.</p>
+            </button>
+            <button
+              data-modal="verif-level-3"
+              class="bg-white p-6 rounded-lg shadow-md hover:bg-blue-50 cursor-pointer modal-trigger"
+            >
+              <h4 class="text-xl font-bold mb-2">Nível 3</h4>
+              <p class="text-gray-600">Testes integrados ao CI/CD.</p>
+            </button>
+          </div>
+        </div>
+
+        <!-- Operations -->
+        <div class="mb-12">
+          <h3 class="text-2xl font-semibold mb-4">Operações</h3>
+          <p class="text-gray-600 mb-6">
+            Operações foca no monitoramento e resposta a incidentes em produção.
+            Para startups, foi adaptada para usar ferramentas gratuitas, como
+            ELK Stack, e planos de resposta simples, permitindo a detecção e
+            mitigação de incidentes com equipes reduzidas.
+          </p>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <button
+              data-modal="ops-level-0"
+              class="bg-white p-6 rounded-lg shadow-md hover:bg-blue-50 cursor-pointer modal-trigger"
+            >
+              <h4 class="text-xl font-bold mb-2">Nível 0</h4>
+              <p class="text-gray-600">Nenhum monitoramento ou resposta.</p>
+            </button>
+            <button
+              data-modal="ops-level-1"
+              class="bg-white p-6 rounded-lg shadow-md hover:bg-blue-50 cursor-pointer modal-trigger"
+            >
+              <h4 class="text-xl font-bold mb-2">Nível 1</h4>
+              <p class="text-gray-600">Logs básicos configurados.</p>
+            </button>
+            <button
+              data-modal="ops-level-2"
+              class="bg-white p-6 rounded-lg shadow-md hover:bg-blue-50 cursor-pointer modal-trigger"
+            >
+              <h4 class="text-xl font-bold mb-2">Nível 2</h4>
+              <p class="text-gray-600">Plano de resposta a incidentes.</p>
+            </button>
+            <button
+              data-modal="ops-level-3"
+              class="bg-white p-6 rounded-lg shadow-md hover:bg-blue-50 cursor-pointer modal-trigger"
+            >
+              <h4 class="text-xl font-bold mb-2">Nível 3</h4>
+              <p class="text-gray-600">Monitoramento contínuo.</p>
+            </button>
+          </div>
         </div>
       </div>
 
-      <!-- Design -->
-      <div class="mb-12">
-        <h3 class="text-2xl font-semibold mb-4">Design</h3>
-        <p class="text-gray-600 mb-6">Design foca na construção de software seguro desde a concepção, identificando riscos e planejando controles. Para startups, foi simplificado com ferramentas gratuitas, como OWASP Threat Dragon, e análises de risco básicas, permitindo que equipes pequenas incorporem segurança sem processos complexos.</p>
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <button data-modal="design-level-0" class="bg-white p-6 rounded-lg shadow-md hover:bg-blue-50 cursor-pointer modal-trigger">
-            <h4 class="text-xl font-bold mb-2">Nível 0</h4>
-            <p class="text-gray-600">Nenhuma análise de riscos realizada.</p>
-          </button>
-          <button data-modal="design-level-1" class="bg-white p-6 rounded-lg shadow-md hover:bg-blue-50 cursor-pointer modal-trigger">
-            <h4 class="text-xl font-bold mb-2">Nível 1</h4>
-            <p class="text-gray-600">Análise de riscos simples no início.</p>
-          </button>
-          <button data-modal="design-level-2" class="bg-white p-6 rounded-lg shadow-md hover:bg-blue-50 cursor-pointer modal-trigger">
-            <h4 class="text-xl font-bold mb-2">Nível 2</h4>
-            <p class="text-gray-600">Modelagem de ameaças básica.</p>
-          </button>
-          <button data-modal="design-level-3" class="bg-white p-6 rounded-lg shadow-md hover:bg-blue-50 cursor-pointer modal-trigger">
-            <h4 class="text-xl font-bold mb-2">Nível 3</h4>
-            <p class="text-gray-600">Modelagem de ameaças formalizada.</p>
-          </button>
+      <!-- Modal Template -->
+      <div
+        id="modal"
+        class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50"
+      >
+        <div
+          class="bg-white p-8 rounded-lg max-w-2xl w-full max-h-[80vh] overflow-y-auto"
+        >
+          <div class="flex justify-between items-center mb-4">
+            <h3 id="modal-title" class="text-2xl font-bold"></h3>
+            <button id="close-modal" class="text-gray-500 hover:text-gray-700">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <div id="modal-content"></div>
         </div>
       </div>
+    </section>
 
-      <!-- Implementation -->
-      <div class="mb-12">
-        <h3 class="text-2xl font-semibold mb-4">Implementação</h3>
-        <p class="text-gray-600 mb-6">Implementação abrange práticas de codificação segura e gestão de dependências. Para startups, foi adaptada para usar diretrizes gratuitas, como OWASP Secure Coding Practices, e ferramentas de análise de código acessíveis, como SonarQube, reduzindo vulnerabilidades sem demandar grandes investimentos.</p>
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <button data-modal="impl-level-0" class="bg-white p-6 rounded-lg shadow-md hover:bg-blue-50 cursor-pointer modal-trigger">
-            <h4 class="text-xl font-bold mb-2">Nível 0</h4>
-            <p class="text-gray-600">Nenhum padrão de codificação segura.</p>
-          </button>
-          <button data-modal="impl-level-1" class="bg-white p-6 rounded-lg shadow-md hover:bg-blue-50 cursor-pointer modal-trigger">
-            <h4 class="text-xl font-bold mb-2">Nível 1</h4>
-            <p class="text-gray-600">Diretrizes básicas de codificação.</p>
-          </button>
-          <button data-modal="impl-level-2" class="bg-white p-6 rounded-lg shadow-md hover:bg-blue-50 cursor-pointer modal-trigger">
-            <h4 class="text-xl font-bold mb-2">Nível 2</h4>
-            <p class="text-gray-600">Análise estática de código.</p>
-          </button>
-          <button data-modal="impl-level-3" class="bg-white p-6 rounded-lg shadow-md hover:bg-blue-50 cursor-pointer modal-trigger">
-            <h4 class="text-xl font-bold mb-2">Nível 3</h4>
-            <p class="text-gray-600">Revisão de código automatizada.</p>
-          </button>
+    <!-- Vulnerabilities Section -->
+    <section id="vulnerabilities" class="bg-gray-200 py-16">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12">
+          Vulnerabilidades Comuns em Startups
+        </h2>
+        <p class="text-lg text-center mb-8">
+          Baseado no OWASP Top 10:2021, Common Vulnerabilities and Exposures
+          (CVE) e Common Weakness Enumeration (CWE), estas são as
+          vulnerabilidades mais comuns em startups e como mitigá-las com
+          recursos limitados e times pequenos.
+        </p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-bold mb-2">Quebra de Controle de Acesso</h3>
+            <p class="text-gray-600 mb-2">
+              <strong>Descrição:</strong> Permite ações não autorizadas.<br />
+              <strong>Impacto:</strong> Acesso indevido a dados e
+              funcionalidades críticas, podendo levar a vazamentos ou destruição
+              de informações.<br />
+              <strong>Mitigação:</strong> Implementar autenticação robusta e
+              controles baseados em papéis.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-bold mb-2">Falhas Criptográficas</h3>
+            <p class="text-gray-600 mb-2">
+              <strong>Descrição:</strong> Expõe dados sensíveis.<br />
+              <strong>Impacto:</strong> Vazamento de senhas, dados financeiros
+              ou informações pessoais dos usuários.<br />
+              <strong>Mitigação:</strong> Usar bibliotecas padrão como OpenSSL.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-bold mb-2">Injeção</h3>
+            <p class="text-gray-600 mb-2">
+              <strong>Descrição:</strong> Permite ataques como SQL Injection.<br />
+              <strong>Impacto:</strong> Acesso ou destruição de dados, controle
+              total do sistema ou vazamento de credenciais.<br />
+              <strong>Mitigação:</strong> Usar consultas parametrizadas.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-bold mb-2">Design Inseguro</h3>
+            <p class="text-gray-600 mb-2">
+              <strong>Descrição:</strong> Introduz vulnerabilidades
+              estruturais.<br />
+              <strong>Impacto:</strong> Dificulta manutenção, introduz riscos
+              persistentes e permite múltiplos vetores de ataque.<br />
+              <strong>Mitigação:</strong> Adotar modelagem de ameaças simples.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-bold mb-2">Configuração Insegura</h3>
+            <p class="text-gray-600 mb-2">
+              <strong>Descrição:</strong> Expõe sistemas a ataques.<br />
+              <strong>Impacto:</strong> Atacantes exploram portas abertas,
+              permissões excessivas ou serviços desnecessários.<br />
+              <strong>Mitigação:</strong> Revisar configurações padrão.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-bold mb-2">Componentes Desatualizados</h3>
+            <p class="text-gray-600 mb-2">
+              <strong>Descrição:</strong> Exploração de vulnerabilidades
+              conhecidas.<br />
+              <strong>Impacto:</strong> Execução de código malicioso, acesso
+              remoto ou negação de serviço por falhas já documentadas.<br />
+              <strong>Mitigação:</strong> Monitorar dependências com Dependabot.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-bold mb-2">Log4Shell (CVE‑2021‑44228)</h3>
+            <p class="text-gray-600 mb-2">
+              <strong>Descrição:</strong> Biblioteca Apache Log4j permite
+              execução remota de código via mensagens de log maliciosas.<br />
+              <strong>Impacto:</strong> Controle total do servidor por um
+              invasor sem autenticação.<br />
+              <strong>Mitigação:</strong> Atualizar para versão estável do
+              Log4j.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-bold mb-2">
+              XSS em Tomcat (CVE‑2022‑34305)
+            </h3>
+            <p class="text-gray-600 mb-2">
+              <strong>Descrição:</strong> Cross-Site Scripting no exemplo de
+              autenticação por formulário do Apache Tomcat.<br />
+              <strong>Impacto:</strong> Roubo de sessão, desfiguração da página ou
+              execução de ações em nome do usuário.<br />
+              <strong>Mitigação:</strong> Remova ou restrinja os exemplos da
+              aplicação, sempre escape e valide entradas de usuários. Atualize o
+              Tomcat.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-bold mb-2">
+              Cross‑Site Request Forgery (CSRF) (CWE‑352)
+            </h3>
+            <p class="text-gray-600 mb-2">
+              <strong>Descrição:</strong> Atacante engana o usuário para
+              executar comandos sem autorização enquanto ele está
+              autenticado.<br />
+              <strong>Impacto:</strong> Alteração de dados, ações financeiras ou
+              exclusão de conteúdo sem o consentimento do usuário.<br />
+              <strong>Mitigação:</strong> Adicionar tokens CSRF únicos por
+              sessão/formulário.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-bold mb-2">
+              Validação de Entrada Incorreta (CWE‑20)
+            </h3>
+            <p class="text-gray-600 mb-2">
+              <strong>Descrição:</strong> Entradas não validadas podem causar
+              falhas como injeção ou estouro de buffer.<br />
+              <strong>Impacto:</strong> Execução de comandos, corrupção de dados
+              ou travamento do sistema.<br />
+              <strong>Mitigação:</strong> Validar tipo, formato e tamanho de
+              dados no servidor sempre.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-bold mb-2">
+              Upload de Arquivos Perigosos (CWE‑434)
+            </h3>
+            <p class="text-gray-600 mb-2">
+              <strong>Descrição:</strong> Uploads não validados podem permitir
+              execução de código malicioso no servidor.<br />
+              <strong>Impacto:</strong> Invasores podem comprometer o servidor
+              ou acessar dados restritos.<br />
+              <strong>Mitigação:</strong> Verificar extensão e tipo MIME,
+              renomear arquivos, armazenar em pasta separada sem execução.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-bold mb-2">
+              Injeção de Comandos do SO (CWE‑78)
+            </h3>
+            <p class="text-gray-600 mb-2">
+              <strong>Descrição:</strong> Permite executar comandos do sistema
+              via entradas não tratadas.<br />
+              <strong>Impacto:</strong> Controle total do sistema, podendo
+              causar vazamentos, exclusão ou sequestro de dados.<br />
+              <strong>Mitigação:</strong> Evitar usar exec, se necessário usar
+              APIs seguras que escapam argumentos.
+            </p>
+          </div>
         </div>
       </div>
+    </section>
 
-      <!-- Verification -->
-      <div class="mb-12">
-        <h3 class="text-2xl font-semibold mb-4">Verificação</h3>
-        <p class="text-gray-600 mb-6">Verificação envolve testes para identificar vulnerabilidades no software. Para startups, foi simplificado com testes manuais iniciais e ferramentas gratuitas, como OWASP ZAP, permitindo a detecção de falhas comuns, como injeções, sem a necessidade de especialistas dedicados.</p>
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <button data-modal="verif-level-0" class="bg-white p-6 rounded-lg shadow-md hover:bg-blue-50 cursor-pointer modal-trigger">
-            <h4 class="text-xl font-bold mb-2">Nível 0</h4>
-            <p class="text-gray-600">Nenhum teste de segurança realizado.</p>
-          </button>
-          <button data-modal="verif-level-1" class="bg-white p-6 rounded-lg shadow-md hover:bg-blue-50 cursor-pointer modal-trigger">
-            <h4 class="text-xl font-bold mb-2">Nível 1</h4>
-            <p class="text-gray-600">Testes manuais básicos.</p>
-          </button>
-          <button data-modal="verif-level-2" class="bg-white p-6 rounded-lg shadow-md hover:bg-blue-50 cursor-pointer modal-trigger">
-            <h4 class="text-xl font-bold mb-2">Nível 2</h4>
-            <p class="text-gray-600">Testes automatizados.</p>
-          </button>
-          <button data-modal="verif-level-3" class="bg-white p-6 rounded-lg shadow-md hover:bg-blue-50 cursor-pointer modal-trigger">
-            <h4 class="text-xl font-bold mb-2">Nível 3</h4>
-            <p class="text-gray-600">Testes integrados ao CI/CD.</p>
-          </button>
-        </div>
+    <!-- About Section -->
+    <section id="about" class="py-16">
+      <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-8">Sobre o Projeto</h2>
+        <p class="text-lg mb-6">
+          Este site é parte de um resultado preliminar realizado no TCC1 que desenvolve um rascunho de um guia estratégico para
+          segurança de software em startups, adaptando o OWASP SAMM, OpenSAMM e
+          Microsoft SDL para equipes e orçamentos reduzidos. O objetivo é
+          oferecer uma ferramenta prática para autoanálise e melhoria contínua
+          da segurança.
+        </p>
+        <p class="text-lg">
+          Desenvolvido com base no referencial teórico e na experiência dos
+          autores em startups, este é um resultado provisório que será refinado
+          no TCC2.
+        </p>
       </div>
+    </section>
 
-      <!-- Operations -->
-      <div class="mb-12">
-        <h3 class="text-2xl font-semibold mb-4">Operações</h3>
-        <p class="text-gray-600 mb-6">Operações foca no monitoramento e resposta a incidentes em produção. Para startups, foi adaptada para usar ferramentas gratuitas, como ELK Stack, e planos de resposta simples, permitindo a detecção e mitigação de incidentes com equipes reduzidas.</p>
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <button data-modal="ops-level-0" class="bg-white p-6 rounded-lg shadow-md hover:bg-blue-50 cursor-pointer modal-trigger">
-            <h4 class="text-xl font-bold mb-2">Nível 0</h4>
-            <p class="text-gray-600">Nenhum monitoramento ou resposta.</p>
-          </button>
-          <button data-modal="ops-level-1" class="bg-white p-6 rounded-lg shadow-md hover:bg-blue-50 cursor-pointer modal-trigger">
-            <h4 class="text-xl font-bold mb-2">Nível 1</h4>
-            <p class="text-gray-600">Logs básicos configurados.</p>
-          </button>
-          <button data-modal="ops-level-2" class="bg-white p-6 rounded-lg shadow-md hover:bg-blue-50 cursor-pointer modal-trigger">
-            <h4 class="text-xl font-bold mb-2">Nível 2</h4>
-            <p class="text-gray-600">Plano de resposta a incidentes.</p>
-          </button>
-          <button data-modal="ops-level-3" class="bg-white p-6 rounded-lg shadow-md hover:bg-blue-50 cursor-pointer modal-trigger">
-            <h4 class="text-xl font-bold mb-2">Nível 3</h4>
-            <p class="text-gray-600">Monitoramento contínuo.</p>
-          </button>
-        </div>
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-8">
+      <div class="container mx-auto text-center">
+        <p>
+          © 2025 Guia Estratégico de Segurança para Startups (SSAMM). Todos os direitos
+          reservados.
+        </p>
+        <p class="mt-2">Desenvolvido como parte de um TCC1.</p>
       </div>
-    </div>
+    </footer>
 
-    <!-- Modal Template -->
-    <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
-      <div class="bg-white p-8 rounded-lg max-w-2xl w-full max-h-[80vh] overflow-y-auto">
-        <div class="flex justify-between items-center mb-4">
-          <h3 id="modal-title" class="text-2xl font-bold"></h3>
-          <button id="close-modal" class="text-gray-500 hover:text-gray-700">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
-        <div id="modal-content"></div>
-      </div>
-    </div>
-  </section>
+    <!-- JavaScript for Mobile Menu and Modal -->
+    <script>
+      // Mobile Menu
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
 
-  <!-- Vulnerabilities Section -->
-  <section id="vulnerabilities" class="bg-gray-200 py-16">
-    <div class="container mx-auto">
-      <h2 class="text-3xl font-bold text-center mb-12">Vulnerabilidades Comuns em Startups</h2>
-      <p class="text-lg text-center mb-8">Baseado no OWASP Top 10:2021, Common Vulnerabilities and Exposures (CVE) e Common Weakness Enumeration (CWE), estas são as vulnerabilidades mais comuns em startups e como mitigá-las com recursos limitados.</p>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-bold mb-2">Quebra de Controle de Acesso</h3>
-          <p class="text-gray-600 mb-2"><strong>Descrição:</strong> Permite ações não autorizadas.<br/> <strong>Mitigação:</strong> Implementar autenticação robusta e controles baseados em papéis.</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-bold mb-2">Falhas Criptográficas</h3>
-          <p class="text-gray-600 mb-2"><strong>Descrição:</strong> Expõe dados sensíveis.<br/> <strong>Mitigação:</strong> Usar bibliotecas padrão como OpenSSL.</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-bold mb-2">Injeção</h3>
-          <p class="text-gray-600 mb-2"><strong>Descrição:</strong> Permite ataques como SQL Injection.<br/> <strong>Mitigação:</strong> Usar consultas parametrizadas.</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-bold mb-2">Design Inseguro</h3>
-          <p class="text-gray-600 mb-2"><strong>Descrição:</strong> Introduz vulnerabilidades estruturais.<br/> <strong>Mitigação:</strong> Adotar modelagem de ameaças simples.</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-bold mb-2">Configuração Insegura</h3>
-          <p class="text-gray-600 mb-2"><strong>Descrição:</strong> Expõe sistemas a ataques.<br/> <strong>Mitigação:</strong> Revisar configurações padrão.</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-bold mb-2">Componentes Desatualizados</h3>
-          <p class="text-gray-600 mb-2"><strong>Descrição:</strong> Exploração de vulnerabilidades conhecidas.<br/> <strong>Mitigação:</strong> Monitorar dependências com Dependabot.</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-bold mb-2">Log4Shell (CVE‑2021‑44228)</h3>
-          <p class="text-gray-600 mb-2"><strong>Descrição:</strong> Biblioteca Apache Log4j permite execução remota de código via mensagens de log maliciosas.<br/> <strong>Mitigação:</strong> Atualizar para versão estável do Log4j.</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-bold mb-2">XSS em Tomcat (CVE‑2022‑34305)</h3>
-          <p class="text-gray-600 mb-2"><strong>Descrição:</strong> Cross-Site Scripting no exemplo de autenticação por formulário do Apache Tomcat.<br/> <strong>Mitigação:</strong> Remova ou restrinja os exemplos da aplicação, sempre escape e valide entradas de usuários. Atualize o Tomcat.</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-bold mb-2">Cross‑Site Request Forgery (CSRF) (CWE‑352)</h3>
-          <p class="text-gray-600 mb-2"><strong>Descrição:</strong> Atacante engana o usuário para executar comandos sem autorização enquanto ele está autenticado.<br/> <strong>Mitigação:</strong> Adicionar tokens CSRF únicos por sessão/formulário.</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-bold mb-2">Validação de Entrada Incorreta (CWE‑20)</h3>
-          <p class="text-gray-600 mb-2"><strong>Descrição:</strong> Entradas não validadas podem causar falhas como injeção ou estouro de buffer.<br/> <strong>Mitigação:</strong> Validar tipo, formato e tamanho de dados no servidor sempre.</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-bold mb-2">Upload de Arquivos Perigosos (CWE‑434)</h3>
-          <p class="text-gray-600 mb-2"><strong>Descrição:</strong> Uploads não validados podem permitir execução de código malicioso no servidor.<br/> <strong>Mitigação:</strong> Verificar extensão e tipo MIME, renomear arquivos, armazenar em pasta separada sem execução.</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-bold mb-2">Injeção de Comandos do SO (CWE‑78)</h3>
-          <p class="text-gray-600 mb-2"><strong>Descrição:</strong> Permite executar comandos do sistema via entradas não tratadas.<br/> <strong>Mitigação:</strong> Evitar usar exec, se necessário usar APIs seguras que escapam argumentos.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="py-16">
-    <div class="container mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-8">Sobre o Projeto</h2>
-      <p class="text-lg mb-6">Este site é parte de um TCC que desenvolve um guia estratégico para segurança de software em startups, adaptando o OWASP SAMM, OpenSAMM e Microsoft SDL para equipes e orçamentos reduzidos. O objetivo é oferecer uma ferramenta prática para autoavaliação e melhoria contínua da segurança.</p>
-      <p class="text-lg">Desenvolvido com base no referencial teórico e na experiência dos autores em startups, este é um resultado provisório que será refinado no TCC2.</p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-blue-900 text-white py-8">
-    <div class="container mx-auto text-center">
-      <p>© 2025 Guia Estratégico de Segurança para Startups. Todos os direitos reservados.</p>
-      <p class="mt-2">Desenvolvido como parte de um TCC.</p>
-    </div>
-  </footer>
-
-  <!-- JavaScript for Mobile Menu and Modal -->
-  <script>
-    // Mobile Menu
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-
-    // Modal Data
-    const modalData = {
-  'gov-level-0': {
-    title: 'Governança - Nível 0',
-    content: `
+      // Modal Data
+      const modalData = {
+        "gov-level-0": {
+          title: "Governança - Nível 0",
+          content: `
       <h4 class="text-lg font-bold mb-2">Explicação</h4>
       <p class="text-gray-600 mb-4">Nenhuma política ou processo de segurança existe. A segurança é tratada de forma reativa, apenas quando problemas ocorrem.</p>
       <h4 class="text-lg font-bold mb-2">Atividades</h4>
@@ -285,11 +531,11 @@
         <li>Ausência de políticas de segurança.</li>
         <li>Nenhum treinamento ou conscientização em segurança.</li>
       </ul>
-    `
-  },
-  'gov-level-1': {
-    title: 'Governança - Nível 1',
-    content: `
+    `,
+        },
+        "gov-level-1": {
+          title: "Governança - Nível 1",
+          content: `
       <h4 class="text-lg font-bold mb-2">Explicação</h4>
       <p class="text-gray-600 mb-4">A startup começa a reconhecer a importância da segurança, implementando políticas básicas e conscientização inicial.</p>
       <h4 class="text-lg font-bold mb-2">Atividades</h4>
@@ -301,7 +547,7 @@
         <li>Designar um responsável informal pela segurança.</li>
       </ul>
       <h4 class="text-lg font-bold mb-2">Benefícios</h4>
-      <p class="text-gray-600 mb-4">Reduz riscos básicos e aumenta a awareness da equipe. Estabelece uma base para conformidade.</p>
+      <p class="text-gray-600 mb-4">Reduz riscos básicos e aumenta o conhecimento da equipe. Estabelece uma base para conformidade.</p>
       <h4 class="text-lg font-bold mb-2">Critérios</h4>
       <ul class="list-disc pl-5 text-gray-600">
         <li>Política de segurança documentada.</li>
@@ -309,11 +555,11 @@
         <li>Pelo menos uma sessão de treinamento realizada.</li>
         <li>Métricas coletadas regularmente.</li>
       </ul>
-    `
-  },
-  'gov-level-2': {
-    title: 'Governança - Nível 2',
-    content: `
+    `,
+        },
+        "gov-level-2": {
+          title: "Governança - Nível 2",
+          content: `
       <h4 class="text-lg font-bold mb-2">Explicação</h4>
       <p class="text-gray-600 mb-4">A segurança é formalizada com políticas claras e treinamento regular, adaptado ao orçamento da startup.</p>
       <h4 class="text-lg font-bold mb-2">Atividades</h4>
@@ -321,7 +567,7 @@
         <li>Estabelecer políticas detalhadas (ex.: controle de acesso).</li>
         <li>Realizar treinamentos trimestrais usando recursos gratuitos, como OWASP.</li>
         <li>Definir métricas básicas (ex.: tempo de correção de vulnerabilidades).</li>
-        <li>Definir KPIs básicos de segurança (ex.: % de equipe treinada).</li>
+        <li>Definir KPIs (Indicador-Chave de Desempenho) básicos de segurança (ex.: % de equipe treinada).</li>
         <li>Revisar políticas trimestralmente com base em mudanças nos requisitos.</li>
       </ul>
       <h4 class="text-lg font-bold mb-2">Benefícios</h4>
@@ -332,13 +578,13 @@
         <li>Métricas coletadas regularmente.</li>
         <li>Treinamento regular documentado.</li>
       </ul>
-    `
-  },
-  'gov-level-3': {
-    title: 'Governança - Nível 3',
-    content: `
+    `,
+        },
+        "gov-level-3": {
+          title: "Governança - Nível 3",
+          content: `
       <h4 class="text-lg font-bold mb-2">Explicação</h4>
-      <p class="text-gray-600 mb-4">A startup possui processos maduros, com métricas de segurança e melhoria contínua, ainda que com recursos limitados.</p>
+      <p class="text-gray-600 mb-4">A startup possui processos maduros, com métricas de segurança e melhoria contínua, ainda que com recursos limitados e times pequenos.</p>
       <h4 class="text-lg font-bold mb-2">Atividades</h4>
       <ul class="list-disc pl-5 text-gray-600 mb-4">
         <li>Implementar métricas de segurança (ex.: tempo de resposta a incidentes).</li>
@@ -354,11 +600,11 @@
         <li>Processo de melhoria contínua documentado.</li>
         <li>Feedback da equipe incorporado às políticas.</li>
       </ul>
-    `
-  },
-  'design-level-0': {
-    title: 'Design - Nível 0',
-    content: `
+    `,
+        },
+        "design-level-0": {
+          title: "Design - Nível 0",
+          content: `
       <h4 class="text-lg font-bold mb-2">Explicação</h4>
       <p class="text-gray-600 mb-4">Nenhuma análise de segurança é feita durante o design do software.</p>
       <h4 class="text-lg font-bold mb-2">Atividades</h4>
@@ -371,17 +617,17 @@
       <ul class="list-disc pl-5 text-gray-600">
         <li>Ausência de análise de riscos ou modelagem de ameaças.</li>
       </ul>
-    `
-  },
-  'design-level-1': {
-    title: 'Design - Nível 1',
-    content: `
+    `,
+        },
+        "design-level-1": {
+          title: "Design - Nível 1",
+          content: `
       <h4 class="text-lg font-bold mb-2">Explicação</h4>
       <p class="text-gray-600 mb-4">A startup realiza uma análise inicial de riscos para identificar ameaças básicas.</p>
       <h4 class="text-lg font-bold mb-2">Atividades</h4>
       <ul class="list-disc pl-5 text-gray-600 mb-4">
-        <li>Listar ativos críticos (ex.: banco de dados de clientes).</li>
-        <li>Identificar riscos comuns usando OWASP Top 10.</li>
+        <li>Listar ativos críticos (qualquer componente que em caso de perda ou instabilidade, gere impactos severos, ex.: banco de dados de clientes).</li>
+        <li>Identificar riscos comuns usando o SSAMM.</li>
         <li>Definir requisitos de segurança para novas funcionalidades.</li>
         <li>Documentar ameaças em uma planilha simples.</li>
       </ul>
@@ -393,11 +639,11 @@
         <li>Ativos críticos identificados.</li>
         <li>Requisitos de segurança documentados.</li>
       </ul>
-    `
-  },
-  'design-level-2': {
-    title: 'Design - Nível 2',
-    content: `
+    `,
+        },
+        "design-level-2": {
+          title: "Design - Nível 2",
+          content: `
       <h4 class="text-lg font-bold mb-2">Explicação</h4>
       <p class="text-gray-600 mb-4">A startup integra modelagem de ameaças básica ao processo de design.</p>
       <h4 class="text-lg font-bold mb-2">Atividades</h4>
@@ -406,7 +652,7 @@
         <li>Usar ferramentas gratuitas como OWASP Threat Dragon ou Microsoft Threat Modeling Tool.</li>
         <li>Realizar sessões de brainstorming para identificar ameaças.</li>
         <li>Documentar controles de segurança no design.</li>
-        <li>Implementar padrões de design seguro.</li>
+        <li>Implementar padrões de design seguro. (ex.: Princípio do Menor Privilégio)</li>
       </ul>
       <h4 class="text-lg font-bold mb-2">Benefícios</h4>
       <p class="text-gray-600 mb-4">Melhora a resiliência da arquitetura. Identifica ameaças de forma estruturada.</p>
@@ -416,11 +662,11 @@
         <li>Controles de segurança identificados.</li>
         <li>Padrões de design seguro implementados.</li>
       </ul>
-    `
-  },
-  'design-level-3': {
-    title: 'Design - Nível 3',
-    content: `
+    `,
+        },
+        "design-level-3": {
+          title: "Design - Nível 3",
+          content: `
       <h4 class="text-lg font-bold mb-2">Explicação</h4>
       <p class="text-gray-600 mb-4">A startup possui um processo formal de modelagem de ameaças revisado regularmente.</p>
       <h4 class="text-lg font-bold mb-2">Atividades</h4>
@@ -436,11 +682,11 @@
         <li>Processo formal de modelagem implementado.</li>
         <li>Revisões regulares documentadas.</li>
       </ul>
-    `
-  },
-  'impl-level-0': {
-    title: 'Implementação - Nível 0',
-    content: `
+    `,
+        },
+        "impl-level-0": {
+          title: "Implementação - Nível 0",
+          content: `
       <h4 class="text-lg font-bold mb-2">Explicação</h4>
       <p class="text-gray-600 mb-4">Nenhum padrão de codificação segura é adotado, aumentando riscos de vulnerabilidades.</p>
       <h4 class="text-lg font-bold mb-2">Atividades</h4>
@@ -453,11 +699,11 @@
       <ul class="list-disc pl-5 text-gray-600">
         <li>Ausência de padrões de codificação segura.</li>
       </ul>
-    `
-  },
-  'impl-level-1': {
-    title: 'Implementação - Nível 1',
-    content: `
+    `,
+        },
+        "impl-level-1": {
+          title: "Implementação - Nível 1",
+          content: `
       <h4 class="text-lg font-bold mb-2">Explicação</h4>
       <p class="text-gray-600 mb-4">A startup adota diretrizes básicas de codificação segura para reduzir vulnerabilidades comuns.</p>
       <h4 class="text-lg font-bold mb-2">Atividades</h4>
@@ -473,17 +719,17 @@
         <li>Diretrizes de codificação documentadas.</li>
         <li>Validação de entradas implementada.</li>
       </ul>
-    `
-  },
-  'impl-level-2': {
-    title: 'Implementação - Nível 2',
-    content: `
+    `,
+        },
+        "impl-level-2": {
+          title: "Implementação - Nível 2",
+          content: `
       <h4 class="text-lg font-bold mb-2">Explicação</h4>
       <p class="text-gray-600 mb-4">A startup usa ferramentas de análise estática para identificar vulnerabilidades no código.</p>
       <h4 class="text-lg font-bold mb-2">Atividades</h4>
       <ul class="list-disc pl-5 text-gray-600 mb-4">
-        <li>Integrar ferramentas como SonarQube ou ESLint.</li>
-        <li>Configurar gates de segurança no processo de build.</li>
+        <li>Integrar ferramentas como SonarQube e/ou ESLint.</li>
+        <li>Configurar gates (validação antes da próximas etapa) de segurança no processo de build.</li>
         <li>Realizar revisões de código focadas em segurança.</li>
         <li>Monitorar dependências com Dependabot.</li>
       </ul>
@@ -494,16 +740,16 @@
         <li>Ferramentas de análise estática configuradas.</li>
         <li>Revisões de código documentadas.</li>
       </ul>
-    `
-  },
-  'impl-level-3': {
-    title: 'Implementação - Nível 3',
-    content: `
+    `,
+        },
+        "impl-level-3": {
+          title: "Implementação - Nível 3",
+          content: `
       <h4 class="text-lg font-bold mb-2">Explicação</h4>
       <p class="text-gray-600 mb-4">A startup automatiza revisões de código e mantém práticas seguras consistentes.</p>
       <h4 class="text-lg font-bold mb-2">Atividades</h4>
       <ul class="list-disc pl-5 text-gray-600 mb-4">
-        <li>Integrar análise estática ao pipeline CI/CD.</li>
+        <li>Integrar análise estática (SAST) ao pipeline CI/CD.</li>
         <li>Automatizar verificação de dependências.</li>
         <li>Treinar equipe em codificação segura avançada.</li>
       </ul>
@@ -514,11 +760,11 @@
         <li>Análise estática no CI/CD implementada.</li>
         <li>Treinamento avançado realizado.</li>
       </ul>
-    `
-  },
-  'verif-level-0': {
-    title: 'Verificação - Nível 0',
-    content: `
+    `,
+        },
+        "verif-level-0": {
+          title: "Verificação - Nível 0",
+          content: `
       <h4 class="text-lg font-bold mb-2">Explicação</h4>
       <p class="text-gray-600 mb-4">Nenhum teste de segurança é realizado, deixando vulnerabilidades não detectadas.</p>
       <h4 class="text-lg font-bold mb-2">Atividades</h4>
@@ -531,16 +777,16 @@
       <ul class="list-disc pl-5 text-gray-600">
         <li>Ausência de testes de segurança.</li>
       </ul>
-    `
-  },
-  'verif-level-1': {
-    title: 'Verificação - Nível 1',
-    content: `
+    `,
+        },
+        "verif-level-1": {
+          title: "Verificação - Nível 1",
+          content: `
       <h4 class="text-lg font-bold mb-2">Explicação</h4>
       <p class="text-gray-600 mb-4">A startup realiza testes manuais básicos para identificar vulnerabilidades óbvias.</p>
       <h4 class="text-lg font-bold mb-2">Atividades</h4>
       <ul class="list-disc pl-5 text-gray-600 mb-4">
-        <li>Executar testes manuais baseados em OWASP Top 10.</li>
+        <li>Executar testes manuais baseados nas vulnerabilidades caterogizadas pelo SSAMM.</li>
         <li>Usar ferramentas gratuitas como OWASP ZAP.</li>
         <li>Documentar resultados dos testes.</li>
         <li>Realizar testes de penetração básicos em componentes críticos.</li>
@@ -553,18 +799,18 @@
         <li>Resultados documentados.</li>
         <li>Testes de penetração básicos realizados.</li>
       </ul>
-    `
-  },
-  'verif-level-2': {
-    title: 'Verificação - Nível 2',
-    content: `
+    `,
+        },
+        "verif-level-2": {
+          title: "Verificação - Nível 2",
+          content: `
       <h4 class="text-lg font-bold mb-2">Explicação</h4>
       <p class="text-gray-600 mb-4">A startup implementa testes automatizados para vulnerabilidades comuns.</p>
       <h4 class="text-lg font-bold mb-2">Atividades</h4>
       <ul class="list-disc pl-5 text-gray-600 mb-4">
         <li>Configurar OWASP ZAP em pipelines CI/CD.</li>
         <li>Criar testes de segurança para vulnerabilidades críticas.</li>
-        <li>Testar APIs e aplicações web regularmente.</li>
+        <li>Testar APIs e aplicações web desenvolvidas regularmente.</li>
         <li>Priorizar correção de vulnerabilidades críticas.</li>
         <li>Realizar testes de penetração regulares.</li>
       </ul>
@@ -576,20 +822,20 @@
         <li>Plano de testes de segurança documentado.</li>
         <li>Relatórios de testes gerados regularmente.</li>
       </ul>
-    `
-  },
-  'verif-level-3': {
-    title: 'Verificação - Nível 3',
-    content: `
+    `,
+        },
+        "verif-level-3": {
+          title: "Verificação - Nível 3",
+          content: `
       <h4 class="text-lg font-bold mb-2">Explicação</h4>
       <p class="text-gray-600 mb-4">A startup integra testes de segurança contínuos ao pipeline de desenvolvimento.</p>
       <h4 class="text-lg font-bold mb-2">Atividades</h4>
       <ul class="list-disc pl-5 text-gray-600 mb-4">
-        <li>Executar testes dinâmicos e estáticos no CI/CD.</li>
+        <li>Executar testes dinâmicos (DAST) e estáticos (SAST) no CI/CD.</li>
         <li>Realizar pentests periódicos com ferramentas acessíveis.</li>
         <li>Monitorar eficácia dos testes.</li>
         <li>Automatizar testes de regressão de segurança.</li>
-        <li>Implementar fuzzing para componentes críticos (OSS-Fuzz).</li>
+        <li>Implementar fuzzing (Entrada massiva de dados) para componentes críticos (OSS-Fuzz).</li>
         <li>Integrar ferramentas de análise de composição de software (SCA).</li>
       </ul>
       <h4 class="text-lg font-bold mb-2">Benefícios</h4>
@@ -601,11 +847,11 @@
         <li>Fuzzing implementado para componentes críticos.</li>
         <li>Ferramentas de análise de composição de software integrados.</li>
       </ul>
-    `
-  },
-  'ops-level-0': {
-    title: 'Operações - Nível 0',
-    content: `
+    `,
+        },
+        "ops-level-0": {
+          title: "Operações - Nível 0",
+          content: `
       <h4 class="text-lg font-bold mb-2">Explicação</h4>
       <p class="text-gray-600 mb-4">Nenhum monitoramento ou plano de resposta a incidentes existe.</p>
       <h4 class="text-lg font-bold mb-2">Atividades</h4>
@@ -618,11 +864,11 @@
       <ul class="list-disc pl-5 text-gray-600">
         <li>Ausência de logs ou resposta a incidentes.</li>
       </ul>
-    `
-  },
-  'ops-level-1': {
-    title: 'Operações - Nível 1',
-    content: `
+    `,
+        },
+        "ops-level-1": {
+          title: "Operações - Nível 1",
+          content: `
       <h4 class="text-lg font-bold mb-2">Explicação</h4>
       <p class="text-gray-600 mb-4">A startup configura logs básicos para monitorar atividades críticas.</p>
       <h4 class="text-lg font-bold mb-2">Atividades</h4>
@@ -640,11 +886,11 @@
         <li>Alertas básicos implementados.</li>
         <li>Plano básico de resposta a incidentes documentado.</li>
       </ul>
-    `
-  },
-  'ops-level-2': {
-    title: 'Operações - Nível 2',
-    content: `
+    `,
+        },
+        "ops-level-2": {
+          title: "Operações - Nível 2",
+          content: `
       <h4 class="text-lg font-bold mb-2">Explicação</h4>
       <p class="text-gray-600 mb-4">A startup possui um plano de resposta a incidentes para lidar com problemas de segurança.</p>
       <h4 class="text-lg font-bold mb-2">Atividades</h4>
@@ -662,11 +908,11 @@
         <li>Simulações realizadas.</li>
         <li>Canal de reporte de segurança estabelecido e divulgado.</li>
       </ul>
-    `
-  },
-  'ops-level-3': {
-    title: 'Operações - Nível 3',
-    content: `
+    `,
+        },
+        "ops-level-3": {
+          title: "Operações - Nível 3",
+          content: `
       <h4 class="text-lg font-bold mb-2">Explicação</h4>
       <p class="text-gray-600 mb-4">A startup implementa monitoramento contínuo e resposta automatizada a incidentes.</p>
       <h4 class="text-lg font-bold mb-2">Atividades</h4>
@@ -684,35 +930,35 @@
         <li>Respostas automatizadas configuradas.</li>
         <li>Lições aprendidas documentadas após incidentes.</li>
       </ul>
-    `
-  }
-};
+    `,
+        },
+      };
 
-    // Modal Logic
-    const modal = document.getElementById('modal');
-    const modalTitle = document.getElementById('modal-title');
-    const modalContent = document.getElementById('modal-content');
-    const closeModal = document.getElementById('close-modal');
-    const modalTriggers = document.querySelectorAll('.modal-trigger');
+      // Modal Logic
+      const modal = document.getElementById("modal");
+      const modalTitle = document.getElementById("modal-title");
+      const modalContent = document.getElementById("modal-content");
+      const closeModal = document.getElementById("close-modal");
+      const modalTriggers = document.querySelectorAll(".modal-trigger");
 
-    modalTriggers.forEach(trigger => {
-      trigger.addEventListener('click', () => {
-        const modalId = trigger.getAttribute('data-modal');
-        modalTitle.textContent = modalData[modalId].title;
-        modalContent.innerHTML = modalData[modalId].content;
-        modal.classList.remove('hidden');
+      modalTriggers.forEach((trigger) => {
+        trigger.addEventListener("click", () => {
+          const modalId = trigger.getAttribute("data-modal");
+          modalTitle.textContent = modalData[modalId].title;
+          modalContent.innerHTML = modalData[modalId].content;
+          modal.classList.remove("hidden");
+        });
       });
-    });
 
-    closeModal.addEventListener('click', () => {
-      modal.classList.add('hidden');
-    });
+      closeModal.addEventListener("click", () => {
+        modal.classList.add("hidden");
+      });
 
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        modal.classList.add('hidden');
-      }
-    });
-  </script>
-</body>
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.classList.add("hidden");
+        }
+      });
+    </script>
+  </body>
 </html>
